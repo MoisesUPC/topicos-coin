@@ -25,7 +25,6 @@ export class Preloader extends Phaser.Scene {
     }
 
     preload() {
-        //  Load the assets for the game - see ./src/assets.js
         for (let type in ASSETS) {
             for (let key in ASSETS[type]) {
                 let args = ASSETS[type][key].args.slice();
@@ -33,7 +32,11 @@ export class Preloader extends Phaser.Scene {
                 this.load[type].apply(this.load, args);
             }
         }
+
+        this.load.image('screamer', 'assets/screamer.png');
+        this.load.audio('scream', 'assets/scream.mp3');
     }
+
 
     create() {
         //  When all the assets have loaded, it's often worth creating global objects here that the rest of the game can use.
