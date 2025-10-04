@@ -62,6 +62,8 @@ export class Game extends Phaser.Scene {
         this.initPlayer();
         this.initInput();
         this.initPhysics();
+        this.score = 0;
+        this.scoreText = this.add.text(16, 16, "Score: 0", {fontSize: "32px", color: "#000"});
     }
 
     update() {
@@ -208,7 +210,7 @@ export class Game extends Phaser.Scene {
             ease: Phaser.Math.Easing.Expo.Out
         });
 
-        this.GameOver();
+        this.scene.start("GameOver", {score: this.score});
     }
 
     // @ts-ignore

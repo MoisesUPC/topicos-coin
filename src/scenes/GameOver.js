@@ -3,6 +3,10 @@ export class GameOver extends Phaser.Scene {
         super('GameOver');
     }
 
+    init(data) {
+        this.score = data.score;
+    }
+
     create() {
         this.background1 = this.add.image(0, 0, 'background').setOrigin(0);
 
@@ -12,5 +16,10 @@ export class GameOver extends Phaser.Scene {
             align: 'center'
         }).setOrigin(0.5);
 
+        this.add.text(400, 400, "Puntaje: " + this.score, 
+            {fontFamily: 'Arial Black', fontSize: 32, color: '#ffffff',
+            stroke: '#000000', strokeThickness: 8,
+            align: 'center'}).setOrigin(0.5);
     }
-}
+
+    }
