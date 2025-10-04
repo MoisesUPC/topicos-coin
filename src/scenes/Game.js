@@ -22,7 +22,7 @@ export class Game extends Phaser.Scene {
         this.score = 0;
         this.distance = 0;
         this.distanceMax = 200;
-        this.flyVelocity = -200;
+        this.flyVelocity = -300;
         this.backgroundSpeed = 1;
         this.coinDistance = 0;
         this.coinDistanceMax = 200;
