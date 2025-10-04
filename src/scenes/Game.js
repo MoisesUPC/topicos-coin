@@ -65,6 +65,7 @@ export class Game extends Phaser.Scene {
     }
 
     update() {
+        if(!this.gameStarted) return;
         this.background1.x -= this.backgroundSpeed;
         this.background2.x -= this.backgroundSpeed;
 
