@@ -25,7 +25,7 @@ export class Game extends Phaser.Scene {
         this.flyVelocity = -200;
         this.backgroundSpeed = 1;
         this.coinDistance = 0;
-        this.coinDistanceMax = 50;
+        this.coinDistanceMax = 200;
         this.spikeDistance = 0;
         this.spikeDistanceMax = 18;
 
@@ -98,12 +98,16 @@ export class Game extends Phaser.Scene {
         }
 
         this.coinGroup.getChildren().forEach(coin => {
+            // @ts-ignore
             coin.x -= this.backgroundSpeed;
+            // @ts-ignore
             coin.refreshBody();
         }, this);
 
         this.obstacleGroup.getChildren().forEach(obstacle => {
+            // @ts-ignore
             obstacle.x -= this.backgroundSpeed;
+            // @ts-ignore
             obstacle.refreshBody();
         }, this);
 
@@ -190,6 +194,7 @@ export class Game extends Phaser.Scene {
         this.player.setVelocityY(this.flyVelocity);
     }
 
+    // @ts-ignore
     hitObstacle(player, obstacle) {
         this.gameStarted = false;
         this.physics.pause();
@@ -205,6 +210,7 @@ export class Game extends Phaser.Scene {
         this.GameOver();
     }
 
+    // @ts-ignore
     collectCoin(player, coin) {
         coin.destroy();
         this.score++;
