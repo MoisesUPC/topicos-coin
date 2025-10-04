@@ -174,7 +174,7 @@ export class Game extends Phaser.Scene {
         });
 
         this.fly();
-        this.tutorialText.setVisible(false);
+        this.tutorialText.setVisible(true);
     }
 
     addCoin() {
@@ -218,7 +218,7 @@ export class Game extends Phaser.Scene {
     }
 
     GameOver() {
-        this.time.delayedCall(2000, () => {
+        this.time.delayedCall(1000, () => {
             this.scene.start('GameOver');
         });
     }
